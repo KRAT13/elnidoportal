@@ -1,22 +1,22 @@
-<div class="fixed top-0 right-0 left-0 bottom-0 bg-[url('/assets/images/bg/nutnut2.jpg')] bg-cover bg-center h-screen w-full">
-    <nav class="bg-gray-800 text-white px-4 py-3">
+<div data-aos="fade" class="fixed top-0 right-0 left-0 bottom-0 bg-[url('/assets/images/bg/nutnut2.jpg')] bg-cover bg-center h-screen">
+    <nav data-aos="slide-down" class="text-gray-800 bg-white px-4 py-3 max-w-screen-xl mx-auto autoShow rounded-b-lg relative z-50 shadow">
       <div class="flex items-center justify-between">
         <div class="text-xl font-semibold">El Nido Portal</div>
 
         <!-- Hamburger button -->
         <button
           (click)="toggleMenu()"
-          class="sm:hidden block text-white focus:outline-none"
+          class="sm:hidden block text-white focus:outline-none z-[60]"
         >
           ☰
         </button>
 
         <!-- Desktop Menu -->
         <ul class="hidden sm:flex space-x-4">
-          <li><a routerLink="/home" routerLinkActive="text-yellow-400 underline" class="hover:text-yellow-300 cursor-pointer">Home</a></li>
-          <li><a routerLink="/tours" routerLinkActive="text-yellow-400 underline" class="hover:text-yellow-300 cursor-pointer">Tours</a></li>
-          <li><a routerLink="/islands" routerLinkActive="text-yellow-400 underline" class="hover:text-yellow-300 cursor-pointer">Islands</a></li>
-          <li><a routerLink="/map" routerLinkActive="text-yellow-400 underline" class="hover:text-yellow-300 cursor-pointer">Map</a></li>
+          <li><a routerLink="/home" class="hover:scale-110  cursor-pointer">Home</a></li>
+          <li><a routerLink="/tours" class="hover:text-yellow-300 cursor-pointer">Tours</a></li>
+          <li><a routerLink="/islands" class="hover:text-yellow-300 cursor-pointer">Islands</a></li>
+          <li><a routerLink="/map" class="hover:text-yellow-300 cursor-pointer">Map</a></li>
         </ul>
       </div>
 
@@ -27,12 +27,14 @@
         class="sm:hidden mt-2 overflow-hidden"
       >
         <ul class="flex flex-col space-y-2 bg-gray-700 p-4 rounded">
-          <li><a routerLink="/home" routerLinkActive="text-yellow-400 underline" class="block hover:text-yellow-300 cursor-pointer">Home</a></li>
-          <li><a routerLink="/tour" routerLinkActive="text-yellow-400 underline" class="block hover:text-yellow-300 cursor-pointer">Tours</a></li>
-          <li><a routerLink="/islands" routerLinkActive="text-yellow-400 underline" class="block hover:text-yellow-300 cursor-pointer">Islands</a></li>
-          <li><a routerLink="/map" routerLinkActive="text-yellow-400 underline" class="block hover:text-yellow-300 cursor-pointer">Map</a></li>
+          <li><a routerLinkActive="text-yellow-400 underline decoration-2 decoration-yellow-400 underline-offset-4 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-yellow-400 hover:after:w-full after:transition-all after:duration-300" [routerLinkActiveOptions]="{ exact: true }" routerLink="/home" class="block hover:text-yellow-300 cursor-pointer">Home</a></li>
+          <li><a routerLinkActive="text-yellow-400 underline decoration-2 decoration-yellow-400 underline-offset-4" [routerLinkActiveOptions]="{ exact: true }" routerLink="/tours" class="block hover:text-yellow-300 cursor-pointer">Home</a></li>
+          <li><a routerLinkActive="text-yellow-400 underline decoration-2 decoration-yellow-400 underline-offset-4" [routerLinkActiveOptions]="{ exact: true }" routerLink="/islands" class="block hover:text-yellow-300 cursor-pointer">Home</a></li>
+          <li><a routerLinkActive="text-yellow-400 underline decoration-2 decoration-yellow-400 underline-offset-4" [routerLinkActiveOptions]="{ exact: true }" routerLink="/map" class="block hover:text-yellow-300 cursor-pointer">Home</a></li>
         </ul>
       </div>
     </nav>
-    <router-outlet></router-outlet>
+    <div class="overflow-y-auto overflow-x-hidden absolute top-0 bottom-0 left-0 right-0 text-white z-10">
+      <router-outlet></router-outlet>
+    </div>
 </div>

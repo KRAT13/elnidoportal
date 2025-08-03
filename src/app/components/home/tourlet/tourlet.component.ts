@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component, inject } from '@angular/core';
+import { ToursService } from '../../../services/tours.service';
+import * as AOS from 'aos';
 @Component({
   selector: 'app-tourlet',
   imports: [],
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './tourlet.component.css'
 })
 export class TourletComponent {
+  
+  tourService = inject(ToursService);
+  tours = '';
 
+  ngOnInit() {
+    AOS.init({ once: true });
+    AOS.refresh();
+  }
 }

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import * as AOS from 'aos';
 
+AOS.init({
+  duration: 800,
+  once: true,
+});
 @Component({
   selector: 'app-banner',
   imports: [],
