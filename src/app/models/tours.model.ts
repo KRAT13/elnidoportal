@@ -4,4 +4,5 @@ export interface Tours {
   code: string;
   name: string;
   islands?: Islands[];
+  imgLink?: string;
 }

@@ -1,10 +1,11 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, computed, inject, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectorRef, Component, computed, inject, OnInit, signal } from '@angular/core';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import * as AOS from 'aos';
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, RouterModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',  
   standalone: true,
@@ -21,7 +22,7 @@ import { RouterOutlet } from '@angular/router';
   ]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'El Nido Portal';
   private showMenu = signal(false);
   private isVisible = signal(false);
@@ -54,5 +55,13 @@ export class AppComponent {
 
   onAnimationDone() {
     // not needed here, but you can hook into animation end
+  }
+
+    ngOnInit(): void {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true, // whether animation should happen only once
+    });
   }
 }

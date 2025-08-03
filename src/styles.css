@@ -1,1 +1,28 @@
 @import "tailwindcss";
+@import 'aos/dist/aos.css';
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #d1d9e665;
+    width: 2px;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 10px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #2c3c53;
+}
