@@ -1,7 +1,7 @@
 <div data-aos="fade" class="fixed top-0 right-0 left-0 bottom-0 bg-[url('/assets/images/bg/nutnut2.jpg')] bg-cover bg-center h-screen">
-    <nav data-aos="slide-down" class="text-gray-800 bg-white px-4 py-3 max-w-screen-xl mx-auto autoShow rounded-b-lg relative z-50 shadow">
+    <nav data-aos="slide-down" class="text-white bg-cyan-600 px-4 py-0 max-w-screen-xl mx-auto autoShow rounded-b-lg relative z-50 shadow">
       <div class="flex items-center justify-between">
-        <div class="text-xl font-semibold">El Nido Portal</div>
+        <div class="bg-[url('/assets/images/bg/elnidoportal.png')] bg-cover bg-left h-[36px] w-[120px] my-2"></div>
 
         <!-- Hamburger button -->
         <button
@@ -12,11 +12,11 @@
         </button>
 
         <!-- Desktop Menu -->
-        <ul class="hidden sm:flex space-x-4">
-          <li><a routerLink="/home" class="hover:scale-110  cursor-pointer">Home</a></li>
-          <li><a routerLink="/tours" class="hover:text-yellow-300 cursor-pointer">Tours</a></li>
-          <li><a routerLink="/islands" class="hover:text-yellow-300 cursor-pointer">Islands</a></li>
-          <li><a routerLink="/map" class="hover:text-yellow-300 cursor-pointer">Map</a></li>
+        <ul class="hidden sm:flex space-x-1">
+          <li class="p-3 border-b-3 transition-colors duration-300 ease-in-out" [routerLinkActive]="['border-white', 'bg-cyan-500', 'text-white']" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/home" class="hover:scale-110  cursor-pointer">Home</a></li>
+          <li class="p-3 border-b-3 transition-colors duration-300 ease-in-out" [routerLinkActive]="['border-white', 'bg-cyan-500', 'text-white']" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/tours" >Tours</a></li>
+          <li class="p-3 border-b-3 transition-colors duration-300 ease-in-out" [routerLinkActive]="['border-white', 'bg-cyan-500', 'text-white']" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/islands" >Islands</a></li>
+          <li class="p-3 border-b-3 transition-colors duration-300 ease-in-out" [routerLinkActive]="['border-white', 'bg-cyan-500', 'text-white']" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/map">Map</a></li>
         </ul>
       </div>
 
@@ -24,13 +24,13 @@
       <div
         *ngIf="isMenuVisible()"
         [class]="menuAnimationClass()"
-        class="sm:hidden mt-2 overflow-hidden"
+        class="sm:hidden mt-2 overflow-hidden pb-4"
       >
-        <ul class="flex flex-col space-y-2 bg-gray-700 p-4 rounded">
-          <li><a routerLinkActive="text-yellow-400 underline decoration-2 decoration-yellow-400 underline-offset-4 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-yellow-400 hover:after:w-full after:transition-all after:duration-300" [routerLinkActiveOptions]="{ exact: true }" routerLink="/home" class="block hover:text-yellow-300 cursor-pointer">Home</a></li>
-          <li><a routerLinkActive="text-yellow-400 underline decoration-2 decoration-yellow-400 underline-offset-4" [routerLinkActiveOptions]="{ exact: true }" routerLink="/tours" class="block hover:text-yellow-300 cursor-pointer">Home</a></li>
-          <li><a routerLinkActive="text-yellow-400 underline decoration-2 decoration-yellow-400 underline-offset-4" [routerLinkActiveOptions]="{ exact: true }" routerLink="/islands" class="block hover:text-yellow-300 cursor-pointer">Home</a></li>
-          <li><a routerLinkActive="text-yellow-400 underline decoration-2 decoration-yellow-400 underline-offset-4" [routerLinkActiveOptions]="{ exact: true }" routerLink="/map" class="block hover:text-yellow-300 cursor-pointer">Home</a></li>
+        <ul class="flex flex-col space-y-2 bg-white-700 rounded text-center ">
+          <li class="p-2 rounded-md bg-cyan-500 transition-colors duration-200 ease-in-out" [routerLinkActive]="['bg-cyan-500', 'text-white']" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/home" (click)="toggleMenu()">Home</a></li>
+          <li class="p-2 rounded-md bg-cyan-500 transition-colors duration-200 ease-in-out" [routerLinkActive]="['bg-cyan-500', 'text-white']" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/tours" (click)="toggleMenu()">Tour</a></li>
+          <li class="p-2 rounded-md bg-cyan-500 transition-colors duration-200 ease-in-out" [routerLinkActive]="['bg-cyan-500', 'text-white']" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/islands" (click)="toggleMenu()">Islands</a></li>
+          <li class="p-2 rounded-md bg-cyan-500 transition-colors duration-200 ease-in-out" [routerLinkActive]="['bg-cyan-500', 'text-white']" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/map" (click)="toggleMenu()">Map</a></li>
         </ul>
       </div>
     </nav>
