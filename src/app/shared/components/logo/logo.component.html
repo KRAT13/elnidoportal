@@ -1,0 +1,9 @@
+@if (selected) {
+    <div class="group relative p-1 flex items-center justify-center bg-cyan-600 rounded">
+        <img [src]="selected.image">
+        <div class="absolute left-1/2 bottom-full mb-2 w-32 bg-white text-gray-800 shadow-md text-xs text-center p-2 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 transform -translate-x-1/2">
+            {{ selected.name }}
+        </div>
+    </div>    
+}
+
