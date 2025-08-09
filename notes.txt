@@ -1,0 +1,2 @@
+pnpm add leaflet
+pnpm add -D @types/leaflet
