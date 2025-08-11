@@ -4,7 +4,7 @@ import { BannerComponent } from './banner/banner.component';
 
 @Component({
   selector: 'app-tours',
-  imports: [SearchComponent, BannerComponent],
+  imports: [BannerComponent],
   templateUrl: './tours.component.html',
   styleUrl: './tours.component.css'
 })
