@@ -1,1 +1,32 @@
-<p>search works!</p>
+<div class="w-full p-4">
+  <label class="sr-only" for="main-search">Search</label>
+
+  <div
+    class="relative flex items-center gap-3 rounded-lg px-3 py-4
+           bg-white/80 hover:bg-white/25 focus-within:bg-white/100
+           backdrop-blur-sm shadow-sm transition-colors duration-200 ease-in-out
+           ring-0 focus-within:ring-2 focus-within:ring-cyan-600 text-gray-600 font-bold"
+  >
+    <!-- search icon -->
+    <svg class="w-5 h-5 text-gray-600 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            d="M21 21l-4.35-4.35M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/>
+    </svg>
+
+    <!-- input -->
+    <input
+      id="main-search"
+      type="search"
+      placeholder="Search tours, beaches, adventures..."
+      class="w-full bg-transparent placeholder-gray-600/30 text-gray-600 text-sm outline-none
+             caret-cyan-400"
+      aria-label="Main search"
+    />
+
+    <!-- optional clear button -->
+    <button type="button" class="hidden md:inline-flex items-center px-2 py-1 text-xs rounded
+                               bg-white/40 hover:bg-white/20 transition">
+      Clear
+    </button>
+  </div>
+</div>

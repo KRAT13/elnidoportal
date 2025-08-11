@@ -18,7 +18,7 @@ export class MapComponent implements OnInit, AfterViewInit  {
 
   ngAfterViewInit(): void {
     const customIcon = L.icon({
-      iconUrl: '/assets/images/marker-icon.png',
+      iconUrl: '/assets/images/map/pin.svg',
       iconSize: [38, 38],
       iconAnchor: [19, 38],
       popupAnchor: [0, -38]
@@ -35,7 +35,7 @@ export class MapComponent implements OnInit, AfterViewInit  {
     // Static location marker
     L.marker([11.179903, 119.390459], { icon: customIcon })
       .addTo(this.map)
-      .openPopup().bindTooltip('Welcome to El Nido', { permanent: false, direction: 'bottom' });
+      .bindTooltip('El Nido Municipality', { permanent: false, direction: 'auto', className: 'customMapTooltip'});
 
     // Zoom control bottom right
     L.control.zoom({ position: 'bottomright' }).addTo(this.map);
@@ -56,7 +56,7 @@ export class MapComponent implements OnInit, AfterViewInit  {
 
         this.myLocationMarker = L.marker([this.lat, this.lng], { icon: locationIcon })
           .addTo(this.map)
-          .bindTooltip('Welcome to El Nido', { permanent: false, direction: 'auto' })
+          .bindTooltip('El Nido Municipality', { permanent: false, direction: 'auto' })
           .on('click', () => {
             this.onMarkerClick();
           });
