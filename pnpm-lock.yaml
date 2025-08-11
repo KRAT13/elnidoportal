@@ -32,6 +32,9 @@ importers:
       '@angular/router':
         specifier: ^20.1.4
         version: 20.1.4(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@20.1.4(@angular/animations@20.1.4(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1)))(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1)))(rxjs@7.8.2)
+      '@asymmetrik/ngx-leaflet':
+        specifier: ^18.0.1
+        version: 18.0.1(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(leaflet@1.9.4)
       aos:
         specifier: ^2.3.4
         version: 2.3.4
@@ -306,6 +309,14 @@ packages:
       '@angular/core': 20.1.4
       '@angular/platform-browser': 20.1.4
       rxjs: ^6.5.3 || ^7.4.0
+
+  '@asymmetrik/ngx-leaflet@18.0.1':
+    resolution: {integrity: sha512-x1KFH+qUCB4H6GWJik0r+8k10/WZXgWcqq2Iu7GpcpESxBFan+bHtiWJt6urqvMOroObEWfMKmVND83CB7AjlQ==}
+    deprecated: Packaged moved to @bluehalo/ngx-leaflet for all future versions, including minor and patch releases.
+    peerDependencies:
+      '@angular/common': '18'
+      '@angular/core': '18'
+      leaflet: '1'
 
   '@babel/code-frame@7.27.1':
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
@@ -3284,6 +3295,13 @@ snapshots:
       '@angular/core': 20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1)
       '@angular/platform-browser': 20.1.4(@angular/animations@20.1.4(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1)))(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))
       rxjs: 7.8.2
+      tslib: 2.8.1
+
+  '@asymmetrik/ngx-leaflet@18.0.1(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(leaflet@1.9.4)':
+    dependencies:
+      '@angular/common': 20.1.4(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
+      '@angular/core': 20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1)
+      leaflet: 1.9.4
       tslib: 2.8.1
 
   '@babel/code-frame@7.27.1':
