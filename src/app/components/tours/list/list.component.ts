@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MasterService } from '../../../services';
 
 @Component({
   selector: 'app-list',
@@ -8,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class ListComponent {
 
+    discoveriesService = inject(MasterService);
 }
