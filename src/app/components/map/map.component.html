@@ -1,3 +1,5 @@
 <!-- <div id="map" class="h-full w-full"></div> -->
 
-<div  class="h-full w-full" leaflet [leafletOptions]="options" (leafletMapReady)="onMapReady($event)"></div>
+<div  class="h-full w-full" leaflet [leafletOptions]="options" (leafletMapReady)="onMapReady($event)">
+    <div (click)="findMe()">XXX</div>
+</div>

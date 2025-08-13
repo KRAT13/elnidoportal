@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 // import * as L from 'leaflet';
-import { icon, latLng, Map, marker, Marker, tileLayer } from 'leaflet';
+import { icon, latLng, Map, marker, Marker, tileLayer, LatLngBounds, LatLngExpression } from 'leaflet';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import { LocationService } from '../../services';
@@ -16,6 +16,8 @@ export class MapComponent implements OnInit, AfterViewInit  {
   // markers: L.Marker[] = [];
   // lat?: number;
   // lng?: number;
+
+  bounds: LatLngBounds[] = [];
 
   map!: Map;
   markers: Marker[] = [];
@@ -103,11 +105,26 @@ export class MapComponent implements OnInit, AfterViewInit  {
         const lng = pos.coords.longitude;
 
         this.addMarker(lat, lng, 'My Location');
+        this.bound();
       })
       .catch(err => {
         console.error(err);
         alert('Unable to retrieve location: ' + err);
       });
+  }
+
+  bound() {
+    const markerCoords: LatLngExpression[] = [];
+    const bounds = new LatLngBounds(markerCoords[0], markerCoords[0]);
+
+    this.markers.forEach(coords => {
+      bounds.extend(coords.getLatLng())
+    })
+
+    this.map.fitBounds(bounds, {
+      paddingTopLeft: [30, 10],
+      paddingBottomRight: [10, 10]
+    });
   }
   
   onMarkerClick(e: any) {

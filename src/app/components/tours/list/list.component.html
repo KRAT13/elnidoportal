@@ -1,9 +1,9 @@
 <div class="max-w-screen-xl mx-auto h-auto bg-white/90 rounded-md mb-4">
     <div class="p-4">
-        <div class="text-4xl font-semibold text-gray-700 pb-4">Tour A <div class="text-2xl font-normal">Lagoons & Beaches - Crystal-clear waters, kayaking spots, limestone cliffs.</div></div>
+        <div class="text-4xl font-bold text-gray-700 pb-4">Tour A</div>
         <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            @for (list of discoveriesService.continents(); track list.id;) {
-            <div class="group flex flex-col h-64 rounded-lg shadow-sm overflow-hidden cursor-pointer">
+            @for (list of (discoveriesService.continents() | search:searchTerm()); track $index) {
+            <div class="group flex flex-col h-64 rounded-lg shadow-sm overflow-hidden cursor-pointer opacity-35 translate-y-4 transition-all duration-500 ease-out" [style.animation]=" 'fadeInUp 0.5s forwards ease-out' " [style.animationDelay]=" ($index * 0.15) + 's' ">
                 <div class="h-3/4 overflow-hidden">
                     <img src="{{ list.images[0] }}"
                         class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110">
@@ -16,11 +16,11 @@
         </div>
     </div>
 </div>
-<div class="max-w-screen-xl mx-auto h-auto bg-white/90 rounded-md mb-4">
+<!-- <div class="max-w-screen-xl mx-auto h-auto bg-white/90 rounded-md mb-4">
     <div class="p-4">
-        <div class="text-4xl font-semibold text-gray-700 pb-4">Tour B <div class="text-2xl font-normal">Caves & Islands - Highlights sandbars, caves, and dramatic rock formations.</div></div>
+        <div class="text-4xl font-bold text-gray-700 pb-4">Tour B</div>
         <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            @for (list of discoveriesService.continents(); track list.id;) {
+            @for (list of (discoveriesService.continents() | search:searchTerm()); track list.id) {
             <div class="group flex flex-col h-64 rounded-lg shadow-sm overflow-hidden cursor-pointer">
                 <div class="h-3/4 overflow-hidden">
                     <img src="{{ list.images[0] }}"
@@ -36,9 +36,9 @@
 </div>
 <div class="max-w-screen-xl mx-auto h-auto bg-white/90 rounded-md mb-4">
     <div class="p-4">
-        <div class="text-4xl font-semibold text-gray-700 pb-4">Tour C <div class="text-2xl font-normal">Hidden Beaches & Shrines - Best for adventurous swimmers and snorkelers.</div></div>
+        <div class="text-4xl font-bold text-gray-700 pb-4">Tour C</div>
         <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            @for (list of discoveriesService.continents(); track list.id;) {
+            @for (list of (discoveriesService.continents() | search:searchTerm()); track list.id) {
             <div class="group flex flex-col h-64 rounded-lg shadow-sm overflow-hidden cursor-pointer">
                 <div class="h-3/4 overflow-hidden">
                     <img src="{{ list.images[0] }}"
@@ -57,9 +57,9 @@
 
 
     <div class="p-4">
-        <div class="text-4xl font-semibold text-gray-700 pb-4">Tour D <div class="text-2xl font-normal">Island Beaches Close to Town - Ideal for beach lounging and calm waters.</div></div>
+        <div class="text-4xl font-bold text-gray-700 pb-4">Tour D</div>
         <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            @for (list of discoveriesService.continents(); track list.id;) {
+            @for (list of (discoveriesService.continents() | search:searchTerm()); track list.id) {
             <div class="group flex flex-col h-64 rounded-lg shadow-sm overflow-hidden cursor-pointer">
                 <div class="h-3/4 overflow-hidden">
                     <img src="{{ list.images[0] }}"
@@ -72,4 +72,4 @@
             }
         </div>
     </div>
-</div>
+</div> -->

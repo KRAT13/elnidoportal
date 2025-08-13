@@ -12,7 +12,7 @@ export class MasterService {
         category: 'TXX,TXA',
         title: 'Seven Commandos',
         description: 'Popular white-sand beach with amenities',
-        images: ['/assets/images/bg/discoveries.jpeg'],
+        images: ['/assets/images/main/seven_commando_beach.jpeg'],
         // latitude: '',
         // longitude: '',
         mapLogo: '',
@@ -23,7 +23,7 @@ export class MasterService {
         category: 'TXX,TXA',
         title: 'Shimizu Island',
         description: 'Limestone-walled islet, good for snorkeling',
-        images: ['/assets/images/bg/discoveries.jpeg'],
+        images: ['/assets/images/main/shimizu_island.jpeg'],
         // latitude: '',
         // longitude: '',
         mapLogo: '',
@@ -34,7 +34,7 @@ export class MasterService {
         category: 'TXX,TXC',
         title: 'Hidden Beach',
         description: 'Secluded behind cliffs, accessible by tunnel',
-        images: ['/assets/images/bg/discoveries.jpeg'],
+        images: ['/assets/images/main/hidden_beach.jpeg'],
         // latitude: '',
         // longitude: '',
         mapLogo: '',
@@ -45,7 +45,7 @@ export class MasterService {
         category: 'TXX,TXD',
         title: 'Paradise Beach',
         description: 'Idyllic white-sand, calm snorkeling',
-        images: ['/assets/images/bg/discoveries.jpeg'],
+        images: ['/assets/images/main/paradise_beach.jpeg'],
         // latitude: '',
         // longitude: '',
         mapLogo: '',
@@ -56,7 +56,7 @@ export class MasterService {
         category: 'TXX,TXD',
         title: 'Paradise Beach',
         description: 'Idyllic white-sand, calm snorkeling',
-        images: ['/assets/images/bg/discoveries.jpeg'],
+        images: ['/assets/images/main/shimizu_island.jpeg'],
         // latitude: '',
         // longitude: '',
         mapLogo: '',
@@ -67,7 +67,7 @@ export class MasterService {
         category: 'TXX,TXD',
         title: 'Paradise Beach',
         description: 'Idyllic white-sand, calm snorkeling',
-        images: ['/assets/images/bg/discoveries.jpeg'],
+        images: ['/assets/images/main/shimizu_island.jpeg'],
         // latitude: '',
         // longitude: '',
         mapLogo: '',
@@ -98,8 +98,10 @@ export class MasterService {
   ];
 
   private readonly _continents = signal<Masters[]>(this.initialMasters);
+  public _search = signal<string>('');
 
   readonly continents = computed(() => this._continents());
+  readonly search = computed(() => this._search());
 
   readonly sortedContinents = computed(() =>
     [...this._continents()].sort((a, b) => a.title.localeCompare(b.title))
