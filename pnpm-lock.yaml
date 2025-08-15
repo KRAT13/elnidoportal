@@ -35,6 +35,9 @@ importers:
       '@asymmetrik/ngx-leaflet':
         specifier: ^18.0.1
         version: 18.0.1(@angular/common@20.1.4(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.4(@angular/compiler@20.1.4)(rxjs@7.8.2)(zone.js@0.15.1))(leaflet@1.9.4)
+      animate.css:
+        specifier: ^4.1.1
+        version: 4.1.1
       aos:
         specifier: ^2.3.4
         version: 2.3.4
@@ -1303,6 +1306,9 @@ packages:
   algoliasearch@5.32.0:
     resolution: {integrity: sha512-84xBncKNPBK8Ae89F65+SyVcOihrIbm/3N7to+GpRBHEUXGjA3ydWTMpcRW6jmFzkBQ/eqYy/y+J+NBpJWYjBg==}
     engines: {node: '>= 14.0.0'}
+
+  animate.css@4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
 
   ansi-escapes@4.3.2:
     resolution: {integrity: sha512-gKXj5ALrKWQLsYG9jlTRmR/xKluxHV+Z9QEwNIgCfM1/uwPMCuzVVnh5mwTd+OuBZcwSIMbqssNWRm1lE51QaQ==}
@@ -4184,6 +4190,8 @@ snapshots:
       '@algolia/requester-browser-xhr': 5.32.0
       '@algolia/requester-fetch': 5.32.0
       '@algolia/requester-node-http': 5.32.0
+
+  animate.css@4.1.1: {}
 
   ansi-escapes@4.3.2:
     dependencies:
