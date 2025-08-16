@@ -3,8 +3,8 @@ export interface Masters {
   category: string;
   title: string;
   description: string;
-  longitude?: string;
-  latitude?: string;
+  longitude: number;
+  latitude: number;
   mapLogo?: string;
   images?: any;
   sort?: number;

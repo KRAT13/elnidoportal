@@ -4,10 +4,11 @@ import { SearchPipe } from '../../../shared/pipes/search.pipe';
 import { Masters } from '../../../models';
 import { CategoryService } from '../../../services/category.service';
 import { Categories } from '../../../models/category.model';
+import { FallbackImageDirective } from '../../../shared/directives/fallback-image.directive';
 
 @Component({
   selector: 'app-list',
-  imports: [SearchPipe],
+  imports: [SearchPipe, FallbackImageDirective],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
