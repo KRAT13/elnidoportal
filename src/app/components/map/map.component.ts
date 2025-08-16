@@ -3,7 +3,8 @@ import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { icon, latLng, Map, marker, Marker, tileLayer, LatLngBounds, LatLngExpression } from 'leaflet';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
-import { LocationService } from '../../services';
+import { LocationService, MasterService } from '../../services';
+import { Masters } from '../../models';
 @Component({
   selector: 'app-map',
   imports: [LeafletModule],
@@ -33,7 +34,9 @@ export class MapComponent implements OnInit, AfterViewInit  {
     center: latLng(11.179903, 119.390459)
   };
 
-  locationService = inject( LocationService)
+  masterService = inject(MasterService);
+  locationService = inject( LocationService);
+
   customIcon = icon({
       iconUrl: '/assets/images/map/pin.svg',
       iconSize: [38, 38],
@@ -78,11 +81,16 @@ export class MapComponent implements OnInit, AfterViewInit  {
     //   m.setIcon(this.customIcon);
     // });
 
-    this.addMarker(11.179903, 119.390459, 'El Nido Municipality')
+    this.addMarker(11.179903, 119.390459, 'El Nido Municipality');
+    this.addMarker(11.179743, 119.386057, 'El Nido Portal (Owner)');
+
+    this.masterService.continents().map( (data:Masters) => {
+      this.addMarker(data.latitude, data.longitude, data.title);
+    })
   }
 
   addMarker(lat: number, lng: number, title: string) {
-    const newMarker = marker([lat, lng], {icon: this.customIcon}).addTo(this.map).bindTooltip(title);
+    const newMarker = marker([lat, lng], {icon: this.customIcon}).addTo(this.map).bindTooltip(title, {permanent: true});
     
     newMarker.on('click', (e) => {
       this.centerAndZoom(e.target);
@@ -99,18 +107,18 @@ export class MapComponent implements OnInit, AfterViewInit  {
   }
 
   findMe() {
-    this.locationService.getCurrentLocation()
-      .then(pos => {
-        const lat = pos.coords.latitude;
-        const lng = pos.coords.longitude;
+    // this.locationService.getCurrentLocation()
+    //   .then(pos => {
+    //     const lat = pos.coords.latitude;
+    //     const lng = pos.coords.longitude;
 
-        this.addMarker(lat, lng, 'My Location');
-        this.bound();
-      })
-      .catch(err => {
-        console.error(err);
-        alert('Unable to retrieve location: ' + err);
-      });
+    //     this.addMarker(lat, lng, 'My Location');
+    //     this.bound();
+    //   })
+    //   .catch(err => {
+    //     console.error(err);
+    //     alert('Unable to retrieve location: ' + err);
+    //   });
   }
 
   bound() {
